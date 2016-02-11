@@ -1,0 +1,6 @@
+<h1> This is index page </h1>
+<% @articles.each do |article| %>
+	<p><%= link_to article.title, article %></p>
+	<hr/>
+<% end %>
+	<p><%= link_to "Add Article", new_article_path %></p>
