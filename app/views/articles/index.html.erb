@@ -1,6 +1,12 @@
 <h1> This is index page </h1>
+
+<% if @articles.blank? %>
+  <p> there is no articles yet</p>
+<% else %>
+  <p> this is your articles </p>
+<% end %>
 <% @articles.each do |article| %>
-	<p><%= link_to article.title, article %></p>
+	<p><%= link_to article.title, {:action => 'show', :id => article.id} -%></p>
 	<hr/>
 <% end %>
-	<p><%= link_to "Add Article", new_article_path %></p>
+	<p><%= link_to "Add Article", {:action => 'new'}%></p>
